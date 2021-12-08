@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/StyleLogin.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connexion</title>
+
+
+</head>
+
+<body>
+
+  <section class="hero is-primary is-fullheight">
+
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+    </div>
+    {% endif %}
+{% endwith %}
+  <div class="login">
+    <h1>Login to Dashboard</h1>
+    <form method="POST" action="/login">
+      <p><input type="email" name="email" value="" placeholder="Enter your Email"></p>
+      <p><input type="password" name="password" value="" placeholder="Password"></p>
+      <p class="remember_me">
+        <label>
+          <input type="checkbox" name="remember_me" id="remember_me">
+          Remember me on this computer
+        </label>
+      </p>
+      <p class="submit"><input type="submit" name="commit" value="Login"></p>
+    </form>
+  </div>
+
+  <div class="login-help">
+    <p>Tu as oublié ton Mots de passe? <a href="#">Click here to reset it</a></p> <!--mettre un envoi de mail ici-->
+    <p>ou</p>
+    <p> Inscrit Toi  <a href="{{url_for('auth.signup')}}"> ici ! </a></p>
+  </div>
+  </div>
+</section>
+</body>
+
+</html>

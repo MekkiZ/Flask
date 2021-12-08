@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aide Étoilé</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.css">
+    <!-- Include d3.js first -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.js"></script>
+    <link rel="stylesheet" href="/static/indexStyle.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+
+<!--style>
+    text {
+        font: 12px sans-serif;
+        text-decoration: none;
+        bottom: 0;
+
+        
+    }
+    svg {
+        display: block;
+        margin-top: 30;
+    }
+    html, body, #data1, svg {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+    }
+</style-->
+<body>
+<section class="hero is-primary">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            
+            <img class='img-logo ' src="/static/img/logo.png" width="70px"; margin-left="100px" >
+            
+          
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                
+            </a>
+        
+        </div>
+      
+        <div id="navMenu" class="navbar-menu">
+        
+            
+          <div class="navbar-end">
+            <div class="navbar-item">
+             
+                <a class="button is-primary" href="{{ url_for('auth.signup') }}">
+                  Sign up
+                </a>
+                <a class="button is-primary" href="{{ url_for('auth.login') }}">
+                  Log in
+                </a>
+               
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+    <div class="hero-body">
+        <div class="container">
+           {% block content %}
+           {% endblock %}
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/StyleSignUp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+
+    <title>Contact us</title>
+</head>
+<body>
+    <section class="hero is-primary is-fullheight">
+
+    <form class="form" action="/signup" method="POST">
+        <h2>Inscription</h2>
+        <p style="color:black;">Prénom</p>
+        <label for="username"></label>
+        <input type="text" name="username" placeholder="..." id="username"></input>
+        
+        <!--p>Nom</p>
+        <label for="lastname"></label>
+        <input type="text" name="lastname" placeholder="ecrire ici." id="lastname"></input-->
+        
+        <p style="color:black;">Mots de passe</p>
+        <label for="password"></label>
+        <input type="password" name="password" placeholder="..." id="password"></input>
+
+        <p style="color:black;">Confirmer mots de passe</p>
+        <label for="password"></label>
+        <input type="password" name="password" placeholder="...." id="password2"></input>
+
+        <p style="color:black;">Email</p>
+        <label for="mail"></label>
+        <input type="email" name="email" placeholder=".....@....." placeholder="votre Email" id="email"></input>
+        
+        <br><br><br><button type="submit" class="button is-link">Comfirmer</button>
+        
+      </form>
+
+      <p style="color:black;" class="login-help"> Déjà inscrit ? <a href="{{url_for('auth.login')}}">Click ici !</a></p>
+
+        </section>
+
+</body>
+</html>

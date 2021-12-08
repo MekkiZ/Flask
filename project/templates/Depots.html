@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
+    <title>Dépots</title>
+</head>
+
+<body class="bg-light">
+
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #c9f5d9;">
+        <img src="/static/img/logo.png" class="img-fluid navbar-brand" alt="Logo aide étoilé" style="width:30px;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('main.profile')}}">Salon</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dépots</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">{{name}}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="/UserDon.html">Don</a>
+                        <a class="dropdown-item" href="/User_modif.html">Modifier profil</a>
+                        <a class="dropdown-item" href="{{ url_for('auth.logout') }}">Se deconnecter</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-sm-0 my-lg-0">
+               <a class="btn btn-outline-primary" href="{{url_for('auth.recherche')}}">Recherche</a>
+            </div>
+    </nav>
+
+
+
+    <br><br><br><br><br>
+    <div style="display: none" class="container border border-primary">
+        <h1>Formulaires</h1>
+        <form    class="form" action="/depots/" method="POST">
+
+            
+
+            
+            <br>
+            <p>Dans quels domaine souhaitez vous aider (saisir une seule aide pour chaque dépot) :</p>
+
+            <div class="container row justify-content-between ">
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="Sport" id="flexCheckDefault1">
+                    <label class="form-check-label" for="option">
+                        Sport
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="Informatique" id="flexCheckDefault2">
+                    <label class="form-check-label" for="option">
+                        Informatique
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="Lecture" id="flexCheckDefault3">
+                    <label class="form-check-label" for="option">
+                        Lecture
+                    </label>
+                </div>
+            </div><br>
+
+
+
+            <div class="container row justify-content-between">
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="BTP" id="flexCheckDefault4">
+                    <label class="form-check-label" for="option">
+                        BTP
+                    </label>
+                </div>
+
+                <div class="form-check ">
+                    <input class="form-check-input" name="option" type="checkbox" value="Artistique" id="flexCheckDefault">
+                    <label class="form-check-label" for="option">
+                        Artistique
+                    </label>
+                </div>
+
+
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="Scolaire" id="flexCheckDefault6">
+                    <label class="form-check-label" for="option">
+                        Scolaire
+                    </label><br><br>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="cgu" required>
+                    <label class="form-check-label" for="cgu">J'accepte les conditions générales d'utilisation</label>
+                    <div class="invalid-feedback">Vous devez accepter les CGU pour continuer</div>
+                </div><br>
+
+               
+                <input type="submit" name="commit" value="Login">
+            </div>
+        </form>
+    </div><br><br>
+
+
+
+
+        <form class="form" action="/depots/" method="POST" style="margin-left:20%; border:3px solid;border-color: rgb(52, 52, 177); width:50vw;margin-left:26%; padding:10px 10px 10px 10px;box-shadow:grey 6px 6px 6px 6px; border-radius: 10px;">
+
+            
+            <br>
+            <p>Dans quels domaine souhaitez vous aider (saisir une seule aide pour chaque dépot) :</p>
+                <br><br>
+            <div class="container row justify-content-between ">
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="Sport" id="flexCheckDefault1">
+                    <label class="form-check-label" for="option">
+                        Sport
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="Informatique" id="flexCheckDefault2">
+                    <label class="form-check-label" for="option">
+                        Informatique
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="Lecture" id="flexCheckDefault3">
+                    <label class="form-check-label" for="option">
+                        Lecture
+                    </label>
+                </div>
+            </div><br>
+
+
+
+            <div class="container row justify-content-between">
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="BTP" id="flexCheckDefault4">
+                    <label class="form-check-label" for="option">
+                        BTP
+                    </label>
+                </div>
+
+                <div class="form-check ">
+                    <input class="form-check-input" name="option" type="checkbox" value="Artistique" id="flexCheckDefault">
+                    <label class="form-check-label" for="option">
+                        Artistique
+                    </label>
+                </div>
+
+
+                <div class="form-check">
+                    <input class="form-check-input" name="option" type="checkbox" value="Scolaire" id="flexCheckDefault6">
+                    <label class="form-check-label" for="option">
+                        Scolaire
+                    </label><br><br> 
+                </div>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="cgu" required>
+                    <label class="form-check-label" for="cgu">J'accepte les conditions générales d'utilisation</label>
+                    <div class="invalid-feedback">Vous devez accepter les CGU pour continuer</div>
+                </div><br><br>
+
+               
+                <input type="submit" name="commit" value="Confirmer" style="border-radius: 10%; border-color:blue ;">
+            </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--script src="static/Codejs_projet.js"></script-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

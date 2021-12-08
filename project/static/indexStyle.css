@@ -1,0 +1,475 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.title{
+ margin-top: 10%;
+ margin-left: 10%;
+    
+}
+
+.img-logo{
+    
+    width: 70px; 
+    margin-left: 48vw;
+
+}
+
+
+#data1{
+
+   margin-top: 20%;
+   
+}
+
+h4, .source{
+
+    margin-left: 15%;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+
+
+.tittre1{
+    
+    width: 40vw;
+    height: 10vh;
+    margin-left:0;
+    margin-top: 15%;
+    
+    font-size:40px;
+    text-align: start;
+}
+
+.tittre2{
+
+        
+        text-align: end;
+        font-size:20px;
+        
+        height: 10vh;
+        
+}
+
+.tittre3{
+
+    
+    text-align: start;
+    font-size:40px;
+    width: 40vw;
+    height: 10vh;
+    
+}
+
+.tittre4{
+
+    
+    text-align: end;
+    font-size:20px;
+    
+    height: 10vh;
+    
+}
+
+.tittre5{
+
+    
+    text-align: start;
+    font-size:40px;
+    width: 40vw;
+    height: 10vh;
+}
+
+.tittre6{
+
+    
+    text-align: end;
+    font-size:20px;
+    width: 80vw;
+    height: 10vh;
+}
+
+#svg_1{
+    padding-top: 0;
+   
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fill 0.5s ease forwards 3s ;
+    
+
+}
+
+
+#svg_2{
+    margin-top: 20%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+   
+    animation: fill 0.5s ease forwards 10000s  ;
+    
+
+}
+
+#svg_1 path:nth-child(1){
+
+    stroke-dasharray: 50px;
+    stroke-dashoffset: 50px;
+    animation: line-anim 1s ease forwards;
+}
+
+#svg_1 path:nth-child(2){
+
+    stroke-dasharray: 500px;
+    stroke-dashoffset: 500px;
+    animation: line-anim 1s ease forwards ;
+    
+}
+
+#svg_1 path:nth-child(3){
+    stroke-dasharray: 525.2340698242188px;
+    stroke-dashoffset: 525.2340698242188px;
+    animation: line-anim 2s ease forwards;
+    
+}
+
+#svg_1 path:nth-child(4){
+
+    stroke-dasharray: 600px;
+    stroke-dashoffset:600px;
+    animation: line-anim 2s ease forwards 0.3s;
+}
+
+#svg_1 path:nth-child(5){
+
+    stroke-dasharray: 600px;
+    stroke-dashoffset: 600px;
+    animation: line-anim 2s ease forwards ;
+}
+
+#svg_1 path:nth-child(6){
+    stroke-dasharray: 604px;
+    stroke-dashoffset: 604px;
+    animation: line-anim 2s ease forwards;
+    
+}
+
+#svg_1 path:nth-child(7){
+    stroke-dasharray: 527px;
+    stroke-dashoffset: 527px;
+    animation: line-anim 2s ease forwards  ;
+    
+}
+
+#svg_1 path:nth-child(8){
+
+    stroke-dasharray: 328.9219970703125px;
+    stroke-dashoffset: 328.9219970703125px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_1 path:nth-child(9){
+
+    stroke-dasharray: 328px;
+    stroke-dashoffset: 328px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_1 path:nth-child(10){
+
+    stroke-dasharray: 604px;
+    stroke-dashoffset: 604px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_1 path:nth-child(11){
+
+    stroke-dasharray: 525px;
+    stroke-dashoffset: 525px;
+    animation: line-anim 2s ease forwards ;
+}
+
+
+#svg_1 path:nth-child(12){
+
+    stroke-dasharray: 495px;
+    stroke-dashoffset: 495px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+
+#svg_1 path:nth-child(13){
+
+    stroke-dasharray: 231px;
+    stroke-dashoffset: 231px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_1 path:nth-child(14){
+
+    stroke-dasharray: 543px;
+    stroke-dashoffset: 543px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+
+#svg_1 path:nth-child(15){
+
+    stroke-dasharray: 525px;
+    stroke-dashoffset: 525px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_1 path:nth-child(16){
+
+    stroke-dasharray: 604px;
+    stroke-dashoffset: 604px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+
+
+#svg_1 path:nth-child(17){
+
+    stroke-dasharray: 363px;
+    stroke-dashoffset: 363px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_1 path:nth-child(18){
+
+    stroke-dasharray: 527px;
+    stroke-dashoffset: 527px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_1 path:nth-child(19){
+
+    stroke-dasharray: 231px;
+    stroke-dashoffset: 231px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_1 path:nth-child(20){
+    stroke-dasharray: 328px;
+    stroke-dashoffset: 328px;
+    animation: line-anim 2s ease forwards  ;
+    
+}
+
+#svg_1 path:nth-child(21){
+
+    stroke-dasharray: 505px;
+    stroke-dashoffset:505px;
+    animation: line-anim 2s ease forwards 0.4s ;
+}
+
+#svg_1 path:nth-child(22){
+    stroke-dasharray: 700px;
+    stroke-dashoffset: 700px;
+    animation: line-anim 2s ease forwards 0.6s;
+    
+}
+
+
+#svg_2 path:nth-child(1){
+
+    stroke-dasharray: 50px;
+    stroke-dashoffset: 50px;
+    animation: line-anim 1s ease forwards;
+}
+
+#svg_2 path:nth-child(2){
+
+    stroke-dasharray: 500px;
+    stroke-dashoffset: 500px;
+    animation: line-anim 1s ease forwards ;
+    
+}
+
+#svg_2 path:nth-child(3){
+    stroke-dasharray: 525.2340698242188px;
+    stroke-dashoffset: 525.2340698242188px;
+    animation: line-anim 2s ease forwards;
+    
+}
+
+#svg_2 path:nth-child(4){
+
+    stroke-dasharray: 600px;
+    stroke-dashoffset:600px;
+    animation: line-anim 2s ease forwards 0.3s;
+}
+
+#svg_2 path:nth-child(5){
+
+    stroke-dasharray: 600px;
+    stroke-dashoffset: 600px;
+    animation: line-anim 2s ease forwards ;
+}
+
+#svg_2 path:nth-child(6){
+    stroke-dasharray: 100px;
+    stroke-dashoffset: 100px;
+    animation: line-anim 2s ease forwards;
+    
+}
+
+#svg_2 path:nth-child(7){
+    stroke-dasharray: 600px;
+    stroke-dashoffset: 600px;
+    animation: line-anim 2s ease forwards  ;
+    
+}
+
+#svg_2 path:nth-child(8){
+
+    stroke-dasharray: 328.9219970703125px;
+    stroke-dashoffset: 328.9219970703125px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_2 path:nth-child(9){
+
+    stroke-dasharray: 328px;
+    stroke-dashoffset: 328px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_2 path:nth-child(10){
+
+    stroke-dasharray: 604px;
+    stroke-dashoffset: 604px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_2 path:nth-child(11){
+
+    stroke-dasharray: 525px;
+    stroke-dashoffset: 525px;
+    animation: line-anim 2s ease forwards ;
+}
+
+
+#svg_2 path:nth-child(12){
+
+    stroke-dasharray: 495px;
+    stroke-dashoffset: 495px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+
+#svg_2 path:nth-child(13){
+
+    stroke-dasharray: 231px;
+    stroke-dashoffset: 231px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_2 path:nth-child(14){
+
+    stroke-dasharray: 543px;
+    stroke-dashoffset: 543px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+
+#svg_2 path:nth-child(15){
+
+    stroke-dasharray: 525px;
+    stroke-dashoffset: 525px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_1 path:nth-child(16){
+
+    stroke-dasharray: 604px;
+    stroke-dashoffset: 604px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+
+
+#svg_2 path:nth-child(17){
+
+    stroke-dasharray: 363px;
+    stroke-dashoffset: 363px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_2 path:nth-child(18){
+
+    stroke-dasharray: 527px;
+    stroke-dashoffset: 527px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_2 path:nth-child(19){
+
+    stroke-dasharray: 231px;
+    stroke-dashoffset: 231px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_2 path:nth-child(20){
+    stroke-dasharray: 328px;
+    stroke-dashoffset: 328px;
+    animation: line-anim 2s ease forwards  ;
+    
+}
+
+#svg_2 path:nth-child(21){
+
+    stroke-dasharray: 505px;
+    stroke-dashoffset:505px;
+    animation: line-anim 2s ease forwards  ;
+}
+
+#svg_2 path:nth-child(22){
+    stroke-dasharray: 700px;
+    stroke-dashoffset: 700px;
+    animation: line-anim 2s ease forwards ;
+    
+}
+
+#svg_2 path:nth-child(23){
+    stroke-dasharray: 500px;
+    stroke-dashoffset: 1000px;
+    animation: line-anim 2s ease forwards ;
+    
+}
+
+#svg_2 path:nth-child(24){
+    stroke-dasharray: 600px;
+    stroke-dashoffset: 600px;
+    animation: line-anim 2s ease forwards ;
+    
+}
+
+
+
+@keyframes line-anim{
+
+    from{
+        stroke-dashoffset: 600;
+    }
+    to{
+        stroke-dasharray: 1200;
+    }
+
+}
+@keyframes fill{
+    from{
+        fill:transparent;
+    }
+    to{
+        fill:white;
+    }
+
+}
+
