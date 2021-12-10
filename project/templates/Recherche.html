@@ -12,6 +12,7 @@
 
 <body class="bg-light">
 
+  
   <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #c9f5d9;">
     <img src="/static/img/logo.png" class="img-fluid navbar-brand" alt="Logo aide étoilé" style="width:30px;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -21,21 +22,21 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <ul class="nav-item">
           <a class="nav-link" href="{{url_for('auth.profile')}}">Salon</a>
-        </li>
-        <li class="nav-item">
+        </ul>
+        <ul class="nav-item">
           <a class="nav-link" href="{{url_for('auth.depots_mission')}}">Dépots</a>
-        </li>
-        <li class="nav-item dropdown">
+        </ul>
+        <ul class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">{{current_user.username}}</a>
+            aria-expanded="false">{{ name }}</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="">Don</a>
             <a class="dropdown-item" href="">Modifier profil</a>
-            <a class="dropdown-item" href="{{ url_for('auth.logout') }}">Se deconnecter</a>        
+            <a class="dropdown-item" href="{{ url_for('auth.logout') }}">Se deconnecté</a>
           </div>
-        </li>
+        </ul>
       </ul>
       <form class="form-inline my-sm-0 my-lg-0" action="/Recherche", method="POST">
         <input class="form-control mr-sm-2 rounded-pill" type="text" placeholder="Search" aria-label="Search" name="search">
@@ -50,6 +51,7 @@
         {% for mission in missions %}
       
           <p> {{mission.poster.username}} propose de l'aide dans : {{mission}}</p> <!-- poster fais referance au backref dans models de la relationship-->
+          <p>Details de la mission: {{mission.text}}</p>
           <p> mail : {{mission.poster.email}}</p>
         
         {% endfor %}

@@ -1,6 +1,6 @@
 
 from typing import KeysView
-from flask import Blueprint, render_template, redirect, url_for, request, flash, g
+from flask import Blueprint,Flask, render_template, redirect, url_for, request, flash, g
 from flask_sqlalchemy import *
 from sqlalchemy.sql.operators import from_
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -15,6 +15,8 @@ from sqlalchemy import engine, create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.inspection import inspect
 import feedparser
+from flask_socketio import SocketIO, send
+
 
 
 '''
@@ -24,13 +26,20 @@ et nous en aurons un autre pour nos itinéraires réguliers,
 qui comprennent l'index et la page de profil protégé.
 '''
 
-
-
-
-
 auth = Blueprint('auth', __name__)
 
 Feed_URL="https://www.france24.com/fr/d%C3%A9couvertes/rss"
+app = Flask(__name__)
+
+
+@auth.route('/profile')
+def profile():
+    
+    mission_opt=db.session.query(Mission.mission).filter_by(id_ex_user=current_user.id).all()
+    
+    return render_template('salon.html',name=current_user.username, posts=mission_opt)
+
+
 
 @auth.route('/login')
 def login():
@@ -39,9 +48,7 @@ def login():
 @auth.route('/signup')
 def signup():
     return render_template('signup.html')
-
-
-    
+ 
 
 @auth.route('/Recherche', methods=['GET','POST'])
 def recherche():
@@ -61,31 +68,6 @@ def recherche():
         return render_template('Recherche.html', name=current_user.username)
     
     
-
-
-
-@auth.route('/profile')
-def profile():
-    
-    mission_opt=db.session.query(Mission.mission).filter_by(id_ex_user=current_user.id).all()
-    feed = feedparser.parse(Feed_URL)
-    article=feed['entries'][0]
-    #titre="Feed Title:", feed.feed.title
-    #s_T_flux="Feed Subtitle:", feed.feed.subtitle
-    #link_flux="Feed Link:",feed.feed.link, "\n"
-    propriete_item_flux=feed.entries[0].keys()
-    print(propriete_item_flux)
-    
-    #for entry in feed.entries:
-        #news=f"{entry.title} --> {entry.link}"
-        
-        #print(news)
-    
-    
-
-    #print(mission_opt)
-    return render_template('salon.html',name=current_user.username, posts=mission_opt)#, news=news)
-
 
 
 
@@ -151,16 +133,17 @@ def depots_mission():
     if request.method == 'POST':
         mission_o=request.form.get('option')
         user_id=current_user.id
+        text_details=request.form.get('details')
         print('POST')
         
     
-        new_p= Mission(id_ex_user=user_id, mission=mission_o)
+        new_p= Mission(id_ex_user=user_id, mission=mission_o, text=text_details)
         
         db.session.add(new_p)
         db.session.commit()
         
    
-        return redirect(url_for('auth.profile'))
+        return redirect(url_for('auth.profile'),name=current_user.username)
 
     elif request.method == 'GET':
         print('GET')

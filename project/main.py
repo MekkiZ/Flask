@@ -4,11 +4,13 @@ from .models import User, Mission
 from . import db
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_socketio import SocketIO, send
 
 main = Blueprint('main', __name__)
-
 app = Flask(__name__)
+
+
+
 
 @main.route('/')
 def index():
@@ -17,6 +19,7 @@ def index():
 @main.route('/profile')
 @login_required # Enfin, nous avons ajouté l'autorisation à notre app en utilisant le décorateur @login_required sur une page de profil afin que seuls les utilisateurs connectés puissent voir cette page.
 def profile():
+    
     return render_template('salon.html', name=current_user.username)
 
 @main.route('/login')
@@ -42,10 +45,6 @@ def depots():
     
     
     return render_template('salon.html')
+''' 
 
-
-@main.route('/depots')
-def depots_mission():
-    return render_template('depots.html')
-'''     
 

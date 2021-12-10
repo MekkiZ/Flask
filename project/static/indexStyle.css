@@ -13,8 +13,7 @@ body{
 .img-logo{
     
     width: 70px; 
-    margin-left: 48vw;
-
+    margin-left: 45vw;
 }
 
 
@@ -96,22 +95,25 @@ h1{
 }
 
 #svg_1{
-    padding-top: 0;
-   
-    margin-left: 50%;
+    padding-bottom:150px;
+    margin-left: 49%;
     transform: translate(-50%, -50%);
     animation: fill 0.5s ease forwards 3s ;
+    
+    
+    
     
 
 }
 
 
 #svg_2{
-    margin-top: 20%;
-    margin-left: 50%;
+    
+    margin-top:10%;
+    margin-left: 49%;
     transform: translate(-50%, -50%);
-   
     animation: fill 0.5s ease forwards 10000s  ;
+    
     
 
 }

@@ -5,11 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Salon</title>
-</head>
+  
 
+  
+</head>
 <body class="bg-light">
 
   <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #c9f5d9;">
@@ -21,13 +29,13 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <ul class="nav-item">
           <a class="nav-link" href="{{url_for('auth.profile')}}">Salon</a>
-        </li>
-        <li class="nav-item">
+        </ul>
+        <ul class="nav-item">
           <a class="nav-link" href="{{url_for('auth.depots_mission')}}">Dépots</a>
-        </li>
-        <li class="nav-item dropdown">
+        </ul>
+        <ul class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">{{name}}</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -35,20 +43,21 @@
             <a class="dropdown-item" href="">Modifier profil</a>
             <a class="dropdown-item" href="{{ url_for('auth.logout') }}">Se deconnecté</a>
           </div>
-        </li>
+        </ul>
       </ul>
       <form class="form-inline my-sm-0 my-lg-0">
-      <button class="btn btn-outline-primary"  type="button"><a href="{{url_for('auth.recherche')}}">Recherche</a></button>
+        <button class="btn btn-outline-primary" type="button"><a
+            href="{{url_for('auth.recherche')}}">Recherche</a></button>
       </form>
     </div>
   </nav>
-  
+
   <main role="main" class="container">
     <!-- /.container -->
 
     <!--carroussel-->
     <br><br><br><br>
-   
+
 
 
     <!--card parti-->
@@ -57,19 +66,27 @@
       <div class="row col justify-content-between">
         <!--Premier card-->
         <div class="card border-primary mb-3 " style="max-width: 18rem; height: 500px;">
-          <div class="card-header">Mes notifications</div>
-          <div class="card-body text-primary">
+          <div class="card-header">Ma liste</div>
+          <div class="card-body text-primary" id="myDIV">
 
-            <p class="card-text"></p>
-          </div>
+            
+            <input type="text" id="myInput" placeholder="Title...">
+            <span onclick="newElement()" class="addBtn">Ajouter</span>
+          
+            </div>
+            <ul id="myUL">
+              
+              
+            </ul>
         </div>
         <!--2 card-->
         <div class="card border-primary mb-3 " style="max-width: 18rem; height: 500px;">
           <div class="card-header">Mes Rendez-Vous</div>
           <div class="card-body text-primary">
 
-            <p class="card-text"><p class="card-text">Salut {{name}}! Voici tes rendez-vous:
-            </p>
+            <p class="card-text">
+              <p class="card-text">Salut {{name}}! Voici tes rendez-vous:
+              </p>
           </div>
         </div>
 
@@ -78,10 +95,10 @@
         <div class="card border-primary mb-3 " style="max-width: 18rem; height: 500px;">
           <div class="card-header">Mes aides</div>
           <div class="card-body text-primary">
-              
+
             <p class="card-text">Salut {{name}}! Voici les aides effectuées:</p>
             {% for post in posts %}
-            <p>{{post}}</p>
+            <p>{{post.mission}}</p>
             {% endfor %}
           </div>
         </div>
@@ -90,19 +107,62 @@
     </div>
 
   </main>
-
-
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
 </body>
+<script>
+  // Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
 
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
 </html>

@@ -25,11 +25,10 @@ class Mission(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
     id_ex_user = db.Column(db.Integer, db.ForeignKey('user.id'))#,unique=True, on as pas le upper dans users car c'est comme qu'il secris sur le databse
     mission= db.Column(db.String(20),nullable=False)
-    
+    text= db.Column(db.String(200))
 
     #creat a function to return the a string when add something
     def __repr__(self):
         return f"{self.mission}"
   
 
-    
