@@ -143,8 +143,8 @@ def depots_mission():
         db.session.commit()
         
    
-        return redirect(url_for('auth.profile'),name=current_user.username)
-
+        return redirect(url_for('auth.profile'))
+    
     elif request.method == 'GET':
         print('GET')
         return render_template('depots.html', name=current_user.username)
