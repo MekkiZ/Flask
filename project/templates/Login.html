@@ -22,27 +22,27 @@
   {% with messages = get_flashed_messages() %}
   {% if messages %}
     <div class="notification is-danger">
-        {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+        {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">Page de connexion</a>.
     </div>
     {% endif %}
 {% endwith %}
   <div class="login" style="box-shadow: 2px 2px 2px rgb(8, 8, 8);">
-    <h1>Login</h1>
+    <h1>Connexion</h1>
     <form method="POST" action="/login" >
       <p><input type="email" name="email" value="" placeholder="Enter your Email"></p>
       <p><input type="password" name="password" value="" placeholder="Password"></p>
       <p class="remember_me">
         <label>
           <input type="checkbox" name="remember_me" id="remember_me">
-          Remember me on this computer
+          Souvenir de moi
         </label>
       </p>
-      <p class="submit"><input type="submit" name="commit" value="Login"></p>
+      <p class="submit"><input type="submit" name="commit" value="Connexion"></p>
     </form>
   </div>
 
   <div class="login-help">
-    <p>Tu as oublié ton Mots de passe? <a href="#">Click here to reset it</a></p> <!--mettre un envoi de mail ici-->
+    <p>Tu as oublié ton Mots de passe? <a href="#">Clique ici</a></p> <!--mettre un envoi de mail ici-->
     <p>ou</p>
     <p> Inscrit Toi  <a href="{{url_for('auth.signup')}}"> ici ! </a></p>
   </div>

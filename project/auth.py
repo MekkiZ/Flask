@@ -62,7 +62,7 @@ def recherche():
     
         results=Mission.query.filter(Mission.mission.like(search))
 
-        return render_template('Recherche.html', missions=results, name=current_user)
+        return render_template('Recherche.html', missions=results, name=current_user.username)
     else:
         print('cela ne marche pas')
         return render_template('Recherche.html', name=current_user.username)

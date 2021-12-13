@@ -39,21 +39,24 @@
         </ul>
       </ul>
       <form class="form-inline my-sm-0 my-lg-0" action="/Recherche", method="POST">
-        <input class="form-control mr-sm-2 rounded-pill" type="text" placeholder="Search" aria-label="Search" name="search">
+        <input class="form-control mr-sm-2 rounded-pill" type="text" placeholder="Recherche" aria-label="Search" name="search">
         <input type="submit" value="Recherche" class="btn btn-outline-primary">
       </form>
     </div>
   </nav>
 
       
-    <div class="container" style="margin-top:13%;border:3px solid;border-color: rgb(52, 52, 177); width:50vw;height: 60vh;margin-left:26%; padding:10px 10px 10px 10px;box-shadow:grey 6px 6px 6px 6px; border-radius: 10px;text-overflow: ellipsis ;" >
+    <div class="container" style="margin-top:13%;border:3px solid;border-color: rgb(52, 52, 177); width:50vw; height: 60vh;margin-left:26%; padding:10px 10px 10px 10px;box-shadow:grey 6px 6px 6px 6px; border-radius: 10px;overflow: scroll;
+    text-overflow: ellipsis;" >
       <h2>Missions disponibles :</h2>
+        <p>Écrit le domaine d'aide sur la barre de recherche ( Informatique, Artistique, BTP, Lecture, Scolaire, Sport). </p>
+        <br>
         {% for mission in missions %}
       
           <p> {{mission.poster.username}} propose de l'aide dans : {{mission}}</p> <!-- poster fais referance au backref dans models de la relationship-->
           <p>Details de la mission: {{mission.text}}</p>
           <p> mail : {{mission.poster.email}}</p>
-          <div style="border-top: 1px solid #000; width : 700px;"></div>
+          <div style="border-top: 1px solid #000; width : 30vw;"></div>
         {% endfor %}
         
     </div>
