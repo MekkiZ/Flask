@@ -19,12 +19,7 @@ from flask_socketio import SocketIO, send
 
 
 
-'''
-Notre application utilisera le modèle d'usine de l'application Flask avec des plans. 
-Nous aurons un modèle qui gère tout ce qui est lié à la propriété auth, 
-et nous en aurons un autre pour nos itinéraires réguliers, 
-qui comprennent l'index et la page de profil protégé.
-'''
+
 
 auth = Blueprint('auth', __name__)
 
