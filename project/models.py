@@ -4,7 +4,7 @@ from flask_login import UserMixin
 from datetime import datetime
 
 
-class User(UserMixin, db.Model):
+class User(db.Model):
     #__tablename__ = "users" # crées le nom de ma table
     id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
     username = db.Column(db.String(1000), unique=True)
@@ -19,7 +19,7 @@ class User(UserMixin, db.Model):
         return f"{self.id}, {self.username}"
     
 
-class Mission(UserMixin, db.Model):
+class Mission(db.Model):
     
     #__tablename__ = "Aides" # crées le nom de ma table
     id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
