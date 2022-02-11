@@ -30,5 +30,6 @@ class Mission(db.Model):
     #creat a function to return the a string when add something
     def __repr__(self):
         return f"{self.mission}"
+    ### function importante pour la lecture string
   
 
