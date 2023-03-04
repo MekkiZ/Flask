@@ -7,8 +7,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_socketio import SocketIO, send
 
 main = Blueprint('main', __name__)
-app = Flask(__name__)
-
 
 
 
@@ -16,15 +14,17 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+
 @main.route('/profile')
-@login_required # Enfin, nous avons ajouté l'autorisation à notre app en utilisant le décorateur @login_required sur une page de profil afin que seuls les utilisateurs connectés puissent voir cette page.
+@login_required  # Enfin, nous avons ajouté l'autorisation à notre app en utilisant le décorateur @login_required sur une page de profil afin que seuls les utilisateurs connectés puissent voir cette page.
 def profile():
-    
     return render_template('salon.html', name=current_user.username)
+
 
 @main.route('/login')
 def login():
     return render_template('Login.html')
+
 
 '''
 @main.route('/depots', methods=['GET', 'POST'])
@@ -45,6 +45,4 @@ def depots():
     
     
     return render_template('salon.html')
-''' 
-
-
+'''

@@ -2,7 +2,6 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
-
 '''on ide python
 from project import db, create_app
 db.create_all(app=create_app()) # pass the create_app result so Flask-SQLAlchemy gets the configuration.
@@ -12,34 +11,28 @@ db.create_all(app=create_app()) # pass the create_app result so Flask-SQLAlchemy
 # init SQLAlchemy so we can use it later in our models
 db = SQLAlchemy()
 
+app = Flask(__name__)
+
+
 def create_app():
-    app = Flask(__name__)
-    
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'secret-key-goes-here'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-    
 
     db.init_app(app)
-    with app.app_context():    #####cette parti est importante pour pouvoir crée la table et donc ne pas avoir de message derreu
+    with app.app_context():  #####cette parti est importante pour pouvoir crée la table et donc ne pas avoir de message derreu
         db.create_all()
-     
-   
 
-
-    login_manager = LoginManager()
+    login_manager = LoginManager(app)
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
-    
-    
+
     from .models import User, Mission
     @login_manager.user_loader
     def load_user(user_id):
         # since the user_id is just the primary key of our user table, use it in the query for the user
-       return User.query.get(int(user_id))
-    
-    
-    
+        return User.query.get(int(user_id))
+
     # blueprint for auth routes in our app
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
@@ -47,15 +40,12 @@ def create_app():
     # blueprint for non-auth parts of app
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
-    
-    with app.app_context():    #####cette parti est importante pour pouvoir crée la table et donc ne pas avoir de message derreu
-        db.create_all()
-        
-    return app
 
+    with app.app_context():  #####cette parti est importante pour pouvoir crée la table et donc ne pas avoir de message derreu
+        db.create_all()
+
+    return app
 
 
 from sqlalchemy import create_engine
 from sqlalchemy.pool import StaticPool
-
-

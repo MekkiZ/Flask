@@ -22,7 +22,7 @@
   {% with messages = get_flashed_messages() %}
   {% if messages %}
     <div class="notification is-danger">
-        {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">Page de connexion</a>.
+        <p>"{{ messages[0] }}, please login with this email"</p>
     </div>
     {% endif %}
 {% endwith %}
@@ -44,7 +44,7 @@
   <div class="login-help">
     <p>Tu as oublié ton Mots de passe? <a href="#">Clique ici</a></p> <!--mettre un envoi de mail ici-->
     <p>ou</p>
-    <p> Inscrit Toi  <a href="{{url_for('auth.signup')}}"> ici ! </a></p>
+    <p> Inscrit Toi  <a href="{{url_for('signup')}}"> ici ! </a></p>
   </div>
   </div>
 </section>

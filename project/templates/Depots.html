@@ -23,10 +23,10 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
             <ul class="nav-item">
-              <a class="nav-link" href="{{url_for('auth.profile')}}">Salon</a>
+              <a class="nav-link" href="{{url_for('profile')}}">Salon</a>
             </ul>
             <ul class="nav-item">
-              <a class="nav-link" href="{{url_for('auth.depots_mission')}}">Dépots</a>
+              <a class="nav-link" href="{{url_for('depots_mission')}}">Dépots</a>
             </ul>
             <ul class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
@@ -34,13 +34,13 @@
               <div class="dropdown-menu" aria-labelledby="dropdown01">
                 <a class="dropdown-item" href="">Don</a>
                 <a class="dropdown-item" href="">Modifier profil</a>
-                <a class="dropdown-item" href="{{ url_for('auth.logout') }}">Se deconnecté</a>
+                <a class="dropdown-item" href="{{ url_for('logout') }}">Se deconnecté</a>
               </div>
             </ul>
           </ul>
           <form class="form-inline my-sm-0 my-lg-0">
             <button class="btn btn-outline-primary" type="button"><a
-                href="{{url_for('auth.recherche')}}">Recherche</a></button>
+                href="{{url_for('recherche')}}">Recherche</a></button>
           </form>
         </div>
       </nav>
