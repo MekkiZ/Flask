@@ -1,7 +1,7 @@
 # Flask
 Projet Bac +2 
 
-Website for help community, you want help someone with your skills, with 'aide etoile', you can !
+Website for help community, you want help someone with your skills, with 'aide etoile', you can ! ( internship )
 
 ## How to run website in localy:
 
